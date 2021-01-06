@@ -1,0 +1,37 @@
+group 'cn.xy.utils'
+version '1.0-SNAPSHOT'
+
+apply plugin: "java"
+
+sourceCompatibility = JavaVersion.VERSION_1_8
+targetCompatibility = JavaVersion.VERSION_1_8
+
+
+repositories {
+    maven {
+        url "http://maven.aliyun.com/nexus/content/groups/public/"
+    }
+    mavenCentral()
+}
+
+dependencies {
+    // spring
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-web', version: "${springBootVersion}"
+    // mongodb
+    compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-mongodb', version: "${springBootVersion}"
+    // elasticsearch
+    compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-client', version: "${elasticsearchVersion}"
+    compile group: 'org.elasticsearch.client', name: 'elasticsearch-rest-high-level-client', version: "${elasticsearchVersion}"
+    // junit
+    testCompile group: 'org.springframework.boot', name: 'spring-boot-starter-test', version: "${springBootVersion}"
+
+}
+
+
+
+buildscript {
+    ext {
+        springBootVersion = "2.3.7.RELEASE"
+        elasticsearchVersion = "7.10.1"
+    }
+}

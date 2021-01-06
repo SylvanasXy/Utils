@@ -1,0 +1,5 @@
+spring:
+  # mongo
+  data.mongodb.uri: mongodb://localhost:27017/mongo_test
+  # es
+  elasticsearch.rest.uris: http://127.0.0.1:9200
